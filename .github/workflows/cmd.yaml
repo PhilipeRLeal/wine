@@ -27,7 +27,7 @@ jobs:
                   
                   
                   # main code to run
-                  python concat_and_plot.py >> report.md
+                  python code/concat_and_plot.py >> report.md
                   
                   
                   # Results
