@@ -1,5 +1,7 @@
-pandas
+setuptools
 sklearn
 matplotlib
-seaborn
+cartopy
+geopandas
+pandas
 numpy
