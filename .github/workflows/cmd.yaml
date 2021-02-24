@@ -25,19 +25,21 @@ jobs:
                   
                   pip install -r requirements.txt
                   
-                  
-                  python train.py >> report.md # | tee logfile.log
-                   
-                  echo "## Model metrics" >> report.md
-                  
-                  cat metrics.txt >> report.md
+                  sudo apt-get install gdal-bin
+                  sudo apt-get install libgdal-dev libgdal1h
                   
                   
-                  echo "## Data Viz" >> report.md
+                  # main code to run
+                  python code/concat_and_plot.py >> report.md
                   
-                  cml-publish feature_importance.png --md --title 'Feature Importance' >> report.md
                   
-                  cml-publish residuals.png --md --title 'residuals'>> report.md
+                  # Results
+                  echo "## Model plots" >> report.md
+                  
+                  # plotting in md
+                  cml-publish results/figure/Domicilio_V147.png --md --title 'spatial Domicilio V147' >> report.md
+                  
+                  cml-send-comment report.md
                   
                   
               
