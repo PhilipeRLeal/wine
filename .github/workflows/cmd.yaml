@@ -26,18 +26,17 @@ jobs:
                   pip install -r requirements.txt
                   
                   
-                  python train.py >> report.md # | tee logfile.log
-                   
-                  echo "## Model metrics" >> report.md
-                  
-                  cat metrics.txt >> report.md
+                  # main code to run
+                  python concat_and_plot.py >> report.md
                   
                   
-                  echo "## Data Viz" >> report.md
+                  # Results
+                  echo "## Model plots" >> report.md
                   
-                  cml-publish feature_importance.png --md --title 'Feature Importance' >> report.md
+                  # plotting in md
+                  cml-publish results/figure/Domicilio_V147.png --md --title 'spatial Domicilio V147' >> report.md
                   
-                  cml-publish residuals.png --md --title 'residuals'>> report.md
+                  cml-send-comment report.md
                   
                   
               
