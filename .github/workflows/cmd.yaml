@@ -30,7 +30,7 @@ jobs:
                    
                   echo "## Model metrics" >> report.md
                   
-                  cat metrix.txt >> report.md
+                  cat metrics.txt >> report.md
                   
                   
                   echo "## Data Viz" >> report.md
